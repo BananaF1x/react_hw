@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 const Button = (props) => {
   const { type, text } = props;
   
