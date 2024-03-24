@@ -1,8 +1,8 @@
-const Input = () => {
+/* eslint-disable react/prop-types */
+const Input = (props) => {
+  const { type, placeholder } = props;
 
-  return (
-   <input type="text" placeholder="Your full name" /> 
-  )
-}
+  return <input type={type} placeholder={placeholder} />;
+};
 
 export default Input;
