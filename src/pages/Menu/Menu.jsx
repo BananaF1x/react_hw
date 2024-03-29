@@ -1,3 +1,5 @@
+import MenuItem from "./MenuItem/MenuItem";
+
 const pizzas = [
   {
     id: 1,
@@ -202,36 +204,17 @@ const pizzas = [
 ];
 
 const Menu = () => {
-
   return pizzas.map((pizza) => {
-    if (pizza.soldOut) {
-      return (
-        <li key={pizza.id} className="pizza">
-        <img src={pizza.imageUrl} className="pizza__image pizza__image--mod" />
+    return (
+      <li key={pizza.id} className="pizza">
+        <img src={pizza.imageUrl} className="pizza__image" alt={pizza.name} />
         <div className="pizza__info">
           <p className="pizza__name">{pizza.name}</p>
-          <p className="pizza__ingredients">{pizza.ingredients.join(', ')}</p>
-          <div className="pizza__actions sold-out">
-            <p className="pizza__price pizza__price--mod">Sold out</p>
-          </div>
+          <p className="pizza__ingredients">{pizza.ingredients.join(", ")}</p>
+          <MenuItem soldOut={pizza.soldOut} price={pizza.unitPrice} />
         </div>
       </li>
-      )
-    } else {
-      return(
-        <li key={pizza.id} className="pizza">
-        <img src={pizza.imageUrl} className="pizza__image" />
-        <div className="pizza__info">
-          <p className="pizza__name">{pizza.name}</p>
-          <p className="pizza__ingredients">{pizza.ingredients.join(', ')}</p>
-          <div className="pizza__actions">
-            <p className="pizza__price">€{pizza.unitPrice}</p>
-            <button className="button">Add to cart</button>
-          </div>
-        </div>
-      </li>
-      )
-    }
+    );
   });
 };
 

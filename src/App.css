@@ -80,16 +80,7 @@ ul {
   justify-content: space-between;
 }
 
-.sold-out {
-  padding-top: 20px;
-}
-
 .pizza__price {
   font-size: 14px;
   text-transform: uppercase;
-}
-
-.pizza__price--mod {
-  font-size: 16px;
-  color: rgb(127, 163, 185);
 }
